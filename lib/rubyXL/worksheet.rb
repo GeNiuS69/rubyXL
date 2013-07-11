@@ -81,7 +81,9 @@ class Worksheet < PrivateClass
     		  table_hash[:table][table_index] = {}
     		end
 
-    		table_hash[:table][table_index][header] = cell.value if cell_test
+    		if headers.find_all{ |head| head.downcase == header.downcase }.size != 0
+              table_hash[:table][table_index][header] = cell.value if cell_test
+            end
 
     		current_row += 1
     		if @sheet_data[current_row].nil?
