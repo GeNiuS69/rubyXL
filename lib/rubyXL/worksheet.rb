@@ -71,7 +71,7 @@ class Worksheet < PrivateClass
   	  # as well as hash of arrays in table_hash[header]
       table_index = current_row - original_row
   	  cell_test= (!cell.nil? && !cell.value.nil?)
-      while cell_test || !table_hash[:table][table_index].empty?
+      while cell_test || !table_hash[:table][table_index].blank?
 
   		  table_hash[header] << (cell_test ? cell.value : nil)
 
